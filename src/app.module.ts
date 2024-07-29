@@ -11,7 +11,7 @@ import { SensordataModule } from './sensordata/sensordata.module';
       envFilePath: '.env',
       isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.DB_URI),
+    MongooseModule.forRoot(process.env.MONGODB_URI),
     SensordataModule
   ],
   controllers: [AppController],
