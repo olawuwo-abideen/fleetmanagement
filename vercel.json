@@ -1,5 +1,5 @@
 {
-    "version": 3,
+    "version": 2,
     "env": {
         "MONGODB_URI": "@fleetmanagement_api_mongo_uri"
     },
