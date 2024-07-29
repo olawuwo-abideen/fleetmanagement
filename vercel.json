@@ -1,15 +1,22 @@
 {
-    "version": 1,
+    "version": 3,
+    "env": {
+        "MONGODB_URI": "@fleetmanagement_api_mongo_uri"
+    },
     "builds": [
-      {
-        "src": "src/main.ts",
-        "use": "@vercel/node"
-      }
+        {
+            "src": "src/main.ts",
+            "use": "@vercel/node"
+        }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "src/main.ts"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "src/main.ts",
+            "methods": [
+                "GET",
+                "POST"
+            ]
+        }
     ]
-  }
+}
