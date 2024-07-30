@@ -5,24 +5,24 @@ Installation
 - clone the repository
 
 
-git clone git@github.com:olawuwo-abideen/fleetmanagement.git
+`git clone git@github.com:olawuwo-abideen/fleetmanagement.git`
 
 
 - navigate to the folder
 
 
-cd fleetmanagement-main.git
+`cd fleetmanagement-main.git`
 
 To run the app in development mode
 
 Open a terminal and enter the following command to install all the  modules needed to run the app:
 
-npm install
+`npm install`
 
 
-Create a .env file with
+Create a `.env` file with
 
-MONGODB_URI= mongodb://localhost:27017/fleetmanagement
+`MONGODB_URI= mongodb://localhost:27017/fleetmanagement`
 
 Enter the following `npm start` command to Command Line Interface to Start the app
 

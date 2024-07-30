@@ -9,14 +9,10 @@ import { SensordataService } from './sensordata.service';
 import { CreatesensorDto } from '../dto/create-sensordata.dto';
 import {sensorData} from '../schemas/sensordata.schema'
 
-import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-
 @Controller('sensor-data')
-@ApiTags('sensor-data')
 export class SensordataController {
 
 constructor(private readonly sensorService: SensordataService) {}
-@ApiCreatedResponse({ type: sensorData })
 @Post()
 async createSensorData(
   @Body()
@@ -25,7 +21,6 @@ async createSensorData(
   return this.sensorService.create(sensordata);
 }
 
-@ApiOkResponse({ type: sensorData})
 @Get()
 async findAll(@Query() query: any) {
   const filter = {};
