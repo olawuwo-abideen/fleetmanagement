@@ -16,10 +16,8 @@ describe('SensorDataService', () => {
   let model: Model<sensorData>;
 
   const mockSensorDataModel = {
-    new: jest.fn().mockResolvedValue(mockSensorData),
-    constructor: jest.fn().mockResolvedValue(mockSensorData),
+    create: jest.fn().mockResolvedValue(mockSensorData),
     find: jest.fn(),
-    create: jest.fn(),
     exec: jest.fn(),
   };
 
@@ -43,14 +41,9 @@ describe('SensorDataService', () => {
   });
 
   it('should create a new sensor data record', async () => {
-    jest.spyOn(model, 'create').mockImplementationOnce(() =>
-      Promise.resolve({
-        save: jest.fn().mockResolvedValue(mockSensorData),
-      } as any),
-    );
-
-    const result = await service.create(mockSensorData as any);
+    const result = await service.create(mockSensorData as sensorData);
     expect(result).toEqual(mockSensorData);
+    expect(model.create).toHaveBeenCalledWith(mockSensorData);
   });
 
   it('should retrieve all sensor data records', async () => {
